@@ -220,11 +220,11 @@ const Header = ({ activeHeading }) => {
             />
           </div>
           <div>
-            <Link to="/">
-              <h1 className="text-[33px] font-bold underline decoration-[#db3f59] hover:decoration-4">
-                Kiana shop
-              </h1>
-            </Link>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <h1 className="text-[33px] font-bold hover:decoration-4">
+              Kiana shop
+            </h1>
+          </Link>
           </div>
           <div>
             <div
