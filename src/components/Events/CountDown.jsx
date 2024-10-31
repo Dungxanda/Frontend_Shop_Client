@@ -37,14 +37,21 @@ const CountDown = ({ data }) => {
     return timeLeft;
   }
 
+  const vietnameseLabels = {
+    days: "ngày",
+    hours: "giờ",
+    minutes: "phút",
+    seconds: "giây",
+  };
+
   const timerComponents = Object.keys(timeLeft).map((interval) => {
     if (!timeLeft[interval]) {
       return null;
     }
 
     return (
-      <span className="text-[25px] text-[#475ad2]">
-        {timeLeft[interval]} {interval}{" "}
+      <span className="text-[25px] text-[#475ad2]" key={interval}>
+        {timeLeft[interval]} {vietnameseLabels[interval]}{" "}
       </span>
     );
   });
@@ -54,7 +61,7 @@ const CountDown = ({ data }) => {
       {timerComponents.length ? (
         timerComponents
       ) : (
-        <span className="text-[red] text-[25px]">Time's Up</span>
+        <span className="text-[red] text-[25px]">Đã hết thời gian</span>
       )}
     </div>
   );
